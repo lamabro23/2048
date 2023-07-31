@@ -3,6 +3,7 @@ use std::rc::Rc;
 use yew::prelude::*;
 
 pub enum ScoreAction {
+    Add(u32),
     Increment,
     Reset,
 }
@@ -22,6 +23,15 @@ impl Reducible for Score {
         let (next_curr, next_best) = match action {
             ScoreAction::Increment => {
                 let next_curr = self.current + 1;
+                let next_best = if next_curr > self.best {
+                    next_curr
+                } else {
+                    self.best
+                };
+                (next_curr, next_best)
+            }
+            ScoreAction::Add(n) => {
+                let next_curr = self.current + n;
                 let next_best = if next_curr > self.best {
                     next_curr
                 } else {

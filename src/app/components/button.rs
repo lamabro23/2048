@@ -20,7 +20,7 @@ where
     let class = props.class.clone().to_string();
     html! {
         <div class={ classes!(&class) }>
-            <button onclick={ &props.event } 
+            <button onclick={ &props.event }
                     class={ classes!(format!("{class}-button")) }>
                     { &props.label }
             </button>

@@ -4,6 +4,18 @@ $tile-color: #cac1b4;
 $display-color: #bbada0;
 $foreground-color: #f9f2e3;
 
+$tile-2: #eee4da;
+$tile-4: #eee1c9;
+$tile-8: #f3b27a;
+$tile-16: #f69664;
+$tile-32: #f77c5f;
+$tile-64: #f75f3b;
+$tile-128: #edd073;
+$tile-256: #edcc62;
+$tile-512: #edc950;
+$tile-1024: #edc53f;
+$tile-2048: #edc22e;
+
 * {
     font-family: 'Quicksand', sans-serif;
 }
@@ -85,22 +97,111 @@ button {
     cursor: pointer;
 }
 
-.game-board {
+.game-container {
+    display: flex;
+    z-index: 0;
+    position: relative;
+}
+
+.cell-container {
     border-radius: 6px;
     min-width: 50vh;
+    padding: 8px;
+    row-gap: 5px;
+    column-gap: 5px;
     aspect-ratio: 1 / 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    background-color: $board-color;
     justify-items: center;
     align-items: center;
-    padding: 5px;
+
+    background-color: $board-color;
+    z-index: 1;
 }
 
-.board-tile {
+.game-cell {
     border-radius: 4px;
     width: 90%;
-    background: $tile-color; /* To make the tiles visible */
-    aspect-ratio: 1 / 1; /* Makes the tile always be a square */
+    background: $tile-color;
+    aspect-ratio: 1 / 1;
+}
+
+.tile-container {
+    border-radius: 6px;
+    min-width: 50vh;
+    padding: 8px;
+    row-gap: 5px;
+    column-gap: 5px;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    background-color: transparent;
+    position: absolute;
+    z-index: 10;
+}
+
+.game-tile {
+    border-radius: 4px;
+    width: 90%;
+    background: transparent;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-tile-text {
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+}
+
+.tile-2 {
+    background-color: $tile-2;
+}
+
+.tile-4 {
+    background-color: $tile-4;
+}
+
+.tile-8 {
+    background-color: $tile-8;
+}
+
+.tile-16 {
+    background-color: $tile-16;
+}
+
+.tile-32 {
+    background-color: $tile-32;
+}
+
+.tile-64 {
+    background-color: $tile-64;
+}
+
+.tile-128 {
+    background-color: $tile-128;
+}
+
+.tile-256 {
+    background-color: $tile-256;
+}
+
+.tile-512 {
+    background-color: $tile-512;
+}
+
+.tile-1024 {
+    background-color: $tile-1024;
+}
+
+.tile-2048 {
+    background-color: $tile-2048;
 }
