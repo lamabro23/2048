@@ -1,0 +1,106 @@
+$dark-brown: #8f7a66;
+$board-color: #b9ada0;
+$tile-color: #cac1b4;
+$display-color: #bbada0;
+$foreground-color: #f9f2e3;
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbf8f0;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    // background-color: $tile-color;
+    width: 100%;
+    height: 60px;
+    align-self: flex-start;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.display {
+    background-color: $display-color;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $foreground-color;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 2px 20px;
+    font-weight: bold;
+}
+
+.display .value {
+    font-size: 1.5rem;
+}
+
+.display .label {
+    font-size: 0.8rem;
+    color: #eadfd3;
+}
+
+.game {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.start {
+    background-color: $dark-brown;
+    border-radius: 5px;
+}
+
+.start-button {
+    color: $foreground-color;
+    // font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.game-board {
+    border-radius: 6px;
+    min-width: 50vh;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: $board-color;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.board-tile {
+    border-radius: 4px;
+    width: 90%;
+    background: $tile-color; /* To make the tiles visible */
+    aspect-ratio: 1 / 1; /* Makes the tile always be a square */
+}

@@ -1,0 +1,15 @@
+[package]
+name = "game-2048"
+version = "0.1.0"
+edition = "2021"
+description = "A copy of the 2048 game written in Rust"
+readme = "README.md"
+repository = "https://github.com/lamabro23/2048"
+license = "MIT OR Apache-2.0"
+keywords = ["yew", "trunk", "2048"]
+categories = ["gui", "wasm", "web-programming", "game"]
+
+[dependencies]
+log = "0.4.19"
+wasm-logger = "0.2.0"
+yew = { version="0.20", features=["csr"] }
