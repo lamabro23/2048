@@ -74,27 +74,11 @@ pub fn App() -> Html {
         }
     };
 
-    let tmp_inc_score = {
-        let score = score.clone();
-        Callback::from(move |_| {
-            score.dispatch(ScoreAction::Increment);
-        })
-    };
-
-    let tmp_inc_btn_props = props! {
-        ButtonProps<AttrValue> {
-            event: tmp_inc_score,
-            label: "+1",
-            class: "start",
-        }
-    };
-
     html! {
         <div class="page">
             <ContextProvider<ScoreContext> context={ score }>
                 <TopBar/>
                 <div class="game">
-                    <Button<AttrValue> ..tmp_inc_btn_props />
                     <Button<AttrValue> ..new_game_btn_props />
                     <div class="game-container">
                         <CellContainer>
