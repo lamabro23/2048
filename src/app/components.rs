@@ -6,4 +6,5 @@ pub mod game_tile;
 pub mod score_counter;
 pub mod tile_container;
 pub mod tile_form;
+pub mod tile_move;
 pub mod topbar;

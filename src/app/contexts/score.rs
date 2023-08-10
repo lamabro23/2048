@@ -2,6 +2,7 @@ use std::rc::Rc;
 
 use yew::prelude::*;
 
+#[allow(dead_code)]
 pub enum ScoreAction {
     Add(u32),
     Reset,
